@@ -1014,4 +1014,7 @@ class CardRepository(private val context: Context) {
         Log.d("CardRepository", "Random card: ${randomCard.name}, isUpright: $isUpright")
         return CardOfDay(randomCard, isUpright)
     }
+    fun getAllCards(): List<TarotCard> {
+        return cards
+    }
 }

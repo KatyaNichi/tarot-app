@@ -132,7 +132,12 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(Screen.YesOrNo.route) {
-                            YesOrNoScreen(cardRepository = cardRepository)
+                            YesOrNoScreen(
+                                cardRepository = cardRepository,
+                                onCardClick = { selectedCard ->
+                                    navController.navigate("card_detail/${selectedCard.id}/true")  // Assuming upright by default
+                                }
+                            )
                         }
                         composable(Screen.Spread.route) {
                             SpreadScreen(cardRepository = cardRepository)
