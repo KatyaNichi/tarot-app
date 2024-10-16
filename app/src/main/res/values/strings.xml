@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">LunearTarot</string>
+    <string name="welcome_message">Welcome to</string>
+    <string name="app_name">Lunear Tarot</string>
+    <string name="card_of_the_day">Your Card of the Day</string>
+    <string name="tap_card_instruction">Tap the card to see its description</string>
+    <string name="error_loading_card">Error loading card: %1$s</string>
+    <string name="ask_question">Ask a yes-or-no question and tap the card to reveal your answer</string>
+    <string name="tap_card">Tap this card</string>
+    <string name="answer">Answer: %1$s</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ask_new_question">Ask New Question</string>
+    <string name="background">Background</string>
+    <string name="pick_1_card">Pick 1 card</string>
+    <string name="pick_2nd_card">Pick 2nd card</string>
+    <string name="pick_final_card">Pick final card</string>
+    <string name="spread_complete">Your 3-card spread is complete</string>
+    <string name="left_arrow">Left arrow</string>
+    <string name="right_arrow">Right arrow</string>
+    <string name="your_3_card_spread">Your 3-Card Spread</string>
+    <string name="past">Past</string>
+    <string name="present">Present</string>
+    <string name="future">Future</string>
+    <string name="upright">Upright</string>
+    <string name="reversed">Reversed</string>
+    <string name="settings">Settings</string>
+    <string name="enable_music">Enable Music</string>
+    <string name="enable_vibration">Enable Vibration</string>
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="daily_card">Daily Card</string>
+    <string name="yes_no">Yes/No</string>
+    <string name="spread">Spread</string>
+    <string name="daily_card_notification_title">Your Daily Tarot Card</string>
+    <string name="daily_card_notification_content">Today\'s card is: %1$s</string>
 </resources>

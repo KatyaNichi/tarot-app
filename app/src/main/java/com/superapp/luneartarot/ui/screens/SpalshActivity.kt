@@ -29,7 +29,7 @@ fun SplashScreen(onSplashScreenFinish: () -> Unit) {
 
 
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
-        val painter = painterResource(id = R.drawable.lunearsplash)
+        val painter = painterResource(id = R.drawable.splash_screen1)
         val imageRatio = painter.intrinsicSize.width / painter.intrinsicSize.height
         val screenRatio = maxWidth / maxHeight
 

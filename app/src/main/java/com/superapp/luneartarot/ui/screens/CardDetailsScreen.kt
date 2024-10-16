@@ -38,8 +38,8 @@ fun CardDetailScreen(cardOfDay: CardOfDay) {
     val context = LocalContext.current
     val imageResId = context.resources.getIdentifier(cardOfDay.card.imageName, "drawable", context.packageName)
     val isUpright = cardOfDay.isUpright
-    val description = if (isUpright) cardOfDay.card.uprightDescription else cardOfDay.card.reversedDescription
-    val meanings = if (isUpright) cardOfDay.card.uprightMeanings else cardOfDay.card.reversedMeanings
+    val description = if (isUpright) cardOfDay.card.uprightMeanings else cardOfDay.card.reversedMeanings
+    val meanings = if (isUpright) cardOfDay.card.keywords else cardOfDay.card.keywordsReversed
 
     Box(modifier = Modifier.fillMaxSize()) {
         // Background image
@@ -138,7 +138,7 @@ fun shareCard(context: Context, cardOfDay: CardOfDay) {
         appendLine("My Tarot Card of the Day:")
         appendLine("${cardOfDay.card.name} ($orientation)")
         appendLine()
-        appendLine(if (isUpright) cardOfDay.card.uprightDescription else cardOfDay.card.reversedDescription)
+        appendLine(if (isUpright) cardOfDay.card.uprightMeanings else cardOfDay.card.reversedMeanings)
         appendLine()
         appendLine("Key Meanings:")
         (if (isUpright) cardOfDay.card.uprightMeanings else cardOfDay.card.reversedMeanings).forEach {

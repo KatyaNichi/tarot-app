@@ -6,6 +6,7 @@ import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -22,6 +23,7 @@ import com.superapp.luneartarot.data.CardOfDay
 import com.superapp.luneartarot.data.CardRepository
 import kotlinx.coroutines.launch
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontFamily
@@ -37,6 +39,9 @@ fun MainScreen(
     val almendraFont = FontFamily(
         Font(R.font.almendra_bold, FontWeight.Bold)
     )
+    val almendraFontItalic = FontFamily(
+        Font(R.font.almendra_italic, FontWeight.Bold)
+    )
     var cardOfDay by remember { mutableStateOf<CardOfDay?>(null) }
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
@@ -46,12 +51,10 @@ fun MainScreen(
     LaunchedEffect(Unit) {
         coroutineScope.launch {
             try {
-              /// return back!  cardOfDay = cardRepository.getCardOfDay()
-                cardOfDay = cardRepository.getRandomCard()
-                Log.d("MainScreen", "Card of the day fetched: ${cardOfDay?.card?.name}")
+                cardOfDay = cardRepository.getCardOfDay()
+                //cardOfDay = cardRepository.getRandomCard()
                 isLoading = false
             } catch (e: Exception) {
-                Log.e("MainScreen", "Error fetching card of the day", e)
                 errorMessage = "Error loading card: ${e.message}"
                 isLoading = false
             }
@@ -59,9 +62,8 @@ fun MainScreen(
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        // Background image
         Image(
-            painter = painterResource(id = R.drawable.background_image),
+            painter = painterResource(id = R.drawable.background_dark),
             contentDescription = "Background",
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
@@ -81,7 +83,7 @@ fun MainScreen(
         ) {
             Spacer(modifier = Modifier.height(32.dp))
             Text(
-                "Welcome to",
+                text = stringResource(id = R.string.welcome_message),
                 style = MaterialTheme.typography.headlineSmall.copy(
                     fontFamily = almendraFont,
                     color = Color.White,
@@ -89,9 +91,9 @@ fun MainScreen(
                 )
             )
             Text(
-                "Lunear Tarot",
+                text = stringResource(id = R.string.app_name),
                 style = MaterialTheme.typography.headlineLarge.copy(
-                    fontFamily = almendraFont,
+                    fontFamily = almendraFontItalic,
                     fontSize = 40.sp,
                     color = Color.White,
                     textAlign = TextAlign.Center
@@ -100,13 +102,13 @@ fun MainScreen(
 
             cardOfDay?.let { cardOfDayInfo ->
                 Text(
-                    "Your Card of the Day",
+                    text = stringResource(id = R.string.card_of_the_day),
                     style = MaterialTheme.typography.headlineMedium.copy(
                         fontFamily = almendraFont,
                         color = Color.White,
                         textAlign = TextAlign.Center
                     ),
-                    modifier = Modifier.padding(top = 32.dp, bottom = 16.dp)
+                    modifier = Modifier.padding(top = 28.dp, bottom = 12.dp)
                 )
                 val imageResId = context.resources.getIdentifier(cardOfDayInfo.card.imageName, "drawable", context.packageName)
                 Image(
@@ -115,7 +117,12 @@ fun MainScreen(
                     modifier = Modifier
                         .size(250.dp)
                         .rotate(if (cardOfDayInfo.isUpright) 0f else 180f)
-                        .clickable { onCardOfDayClick(cardOfDayInfo) }
+                        .clickable(
+                            interactionSource = remember { MutableInteractionSource() }, // Manage interactions
+                            indication = null // Disable ripple effect
+                        ) {
+                            onCardOfDayClick(cardOfDayInfo)
+                        }
                 )
 
                 Text(
@@ -127,14 +134,8 @@ fun MainScreen(
                     ),
                     modifier = Modifier.padding(top = 16.dp)
                 )
-
                 Text(
-                    if (cardOfDayInfo.isUpright) "Upright" else "Reversed",
-                    style = MaterialTheme.typography.bodyLarge,
-                    textAlign = TextAlign.Center
-                )
-                Text(
-                    "Tap the card to see its description",
+                    text = stringResource(id = R.string.tap_card_instruction),
                     style = MaterialTheme.typography.bodyLarge.copy(
                         color = Color.White,
                         textAlign = TextAlign.Center

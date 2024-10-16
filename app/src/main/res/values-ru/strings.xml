@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_message">Добро пожаловать в</string>
+    <string name="app_name">Лунное Таро</string>
+    <string name="card_of_the_day">Ваша карта дня</string>
+    <string name="tap_card_instruction">Нажмите на карту, чтобы увидеть её описание</string>
+    <string name="error_loading_card">Ошибка загрузки карты: %1$s</string>
+    <string name="ask_question">Задайте вопрос с ответом да или нет и нажимайте на карту, чтобы увидеть ответ</string>
+    <string name="tap_card">Нажмите на эту карту</string>
+    <string name="answer">Ответ: %1$s</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="ask_new_question">Задать новый вопрос</string>
+    <string name="background">Фон</string>
+    <string name="pick_1_card">Выберите 1 карту</string>
+    <string name="pick_2nd_card">Выберите 2-ю карту</string>
+    <string name="pick_final_card">Выберите последнюю карту</string>
+    <string name="spread_complete">Ваш расклад из 3 карт завершен</string>
+    <string name="left_arrow">Левая стрелка</string>
+    <string name="right_arrow">Правая стрелка</string>
+    <string name="your_3_card_spread">Ваш расклад из 3 карт</string>
+    <string name="past">Прошлое</string>
+    <string name="present">Настоящее</string>
+    <string name="future">Будущее</string>
+    <string name="upright">Прямая</string>
+    <string name="reversed">Перевернутая</string>
+    <string name="settings">Настройки</string>
+    <string name="enable_music">Включить музыку</string>
+    <string name="enable_vibration">Включить вибрацию</string>
+    <string name="enable_notifications">Включить уведомления</string>
+    <string name="daily_card">Карта дня</string>
+    <string name="yes_no">Да/Нет</string>
+    <string name="spread">Расклад</string>
+    <string name="daily_card_notification_title">Ваше Ежедневное Таро</string>
+    <string name="daily_card_notification_content">Карта дня: %1$s</string>
+</resources>

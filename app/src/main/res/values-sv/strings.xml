@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome_message">Välkommen till</string>
+    <string name="app_name">Lunär Tarot</string>
+    <string name="card_of_the_day">Ditt Dagens Kort</string>
+    <string name="tap_card_instruction">Tryck på kortet för att se beskrivningen</string>
+    <string name="error_loading_card">Fel vid kortladdning: %1$s</string>
+    <string name="ask_question">Ställ en ja- eller nejfråga och tryck på kortet för att avslöja ditt svar</string>
+    <string name="tap_card">Tryck på detta kort</string>
+    <string name="answer">Svar: %1$s</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nej</string>
+    <string name="ask_new_question">Ställ en ny fråga</string>
+    <string name="background">Bakgrund</string>
+    <string name="pick_1_card">Välj 1 kort</string>
+    <string name="pick_2nd_card">Välj 2:a kortet</string>
+    <string name="pick_final_card">Välj sista kortet</string>
+    <string name="spread_complete">Din 3-kortsutläggning är klar</string>
+    <string name="left_arrow">Vänster pil</string>
+    <string name="right_arrow">Höger pil</string>
+    <string name="your_3_card_spread">Din 3-kortsutläggning</string>
+    <string name="past">Förflutet</string>
+    <string name="present">Nutid</string>
+    <string name="future">Framtid</string>
+    <string name="upright">Rättvänd</string>
+    <string name="reversed">Omvänd</string>
+    <string name="settings">Settings</string>
+    <string name="enable_music">Aktivera Musik</string>
+    <string name="enable_vibration">Aktivera Vibration</string>
+    <string name="enable_notifications">Aktivera Notiser</string>
+    <string name="daily_card">Daglig Kort</string>
+    <string name="yes_no">Ja/Nej</string>
+    <string name="spread">Spridning</string>
+    <string name="daily_card_notification_title">Din Dagliga Tarotkort</string>
+    <string name="daily_card_notification_content">Dagens kort är: %1$s</string>
+</resources>
