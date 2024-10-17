@@ -47,6 +47,10 @@ It offers users daily card readings, yes/no questions, and three-card spreads, a
 3. Sync Gradle files
 4. Run the app on an emulator or physical device
 
+## Acknowledgements
+
+- Feature graphic created using tools from [Hotpot.ai](https://hotpot.ai)
+
 
 ## Contact
 
